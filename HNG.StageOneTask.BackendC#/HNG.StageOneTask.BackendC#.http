@@ -1,0 +1,6 @@
+@HNG.StageOneTask.BackendC__HostAddress = http://localhost:5134
+
+GET {{HNG.StageOneTask.BackendC__HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
