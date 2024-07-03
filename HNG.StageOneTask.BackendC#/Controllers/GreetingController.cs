@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace HNG.StageOneTask.BackendC_.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class GreetingController : ControllerBase
     {
