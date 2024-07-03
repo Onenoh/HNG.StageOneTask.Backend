@@ -18,9 +18,9 @@ namespace HNG.StageOneTask.BackendC_.Controllers
         }
 
         [HttpGet("hello")]
-        public async Task<ActionResult> Greetings([FromQuery]string visitor_Name, CancellationToken token)
+        public async Task<ActionResult> Greetings([FromQuery]string visitor_name, CancellationToken token)
         {
-            var greeting = await _greetingService.Greet(HttpContext, visitor_Name, token);
+            var greeting = await _greetingService.Greet(HttpContext, visitor_name, token);
             return Ok(greeting);
         }
 

@@ -36,11 +36,9 @@ namespace HNG.StageOneTask.BackendC_.Implementations
             if (string.IsNullOrEmpty(ipAddress) || ipAddress == "::1")
             {
                 ipAddress = context.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+                ipAddress = "8.8.8.8";
             }
-            if (string.IsNullOrEmpty(ipAddress) || ipAddress == "::1")
-            {
-                ipAddress = "8.8.8.8"; 
-            }
+
             return ipAddress ?? "Unknown";
         }
 
@@ -63,7 +61,7 @@ namespace HNG.StageOneTask.BackendC_.Implementations
                 return new JObject { { "error", "Invalid location data format" } };
             }
         }
-        private string GetTemperature()
+        private static string GetTemperature()
         {
             var temperatureC = Random.Shared.Next(-20, 55);
             var temperatureF = 32 + (int)(temperatureC / 0.5556);
